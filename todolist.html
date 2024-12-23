@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>todolist</title>
+</head>
+<style>
+    .head{
+        color: aqua;
+        display: flex;
+        text-align: center;
+        align-items: center;
+        margin-left: 36%;
+
+    }
+    .container{
+        text-align: center;
+        border: dotted black 2px;
+        margin-left: 15%;
+        margin-right: 15%;
+        box-shadow: 10px 10px rgb(236, 235, 233);
+        
+    }
+    ul{
+        border-bottom: 3px rgb(177, 180, 173) solid;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        margin-left: 25%;
+        margin-right: 25%;
+        list-style-type: circle;
+        font-size: 1.5em;
+    }
+    button{
+        border-radius: 100%;
+        padding-bottom: 5px;
+        padding-top: 5px;
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+    li{
+        text-align: left;
+    }
+    ul li:nth-child(odd){
+        color: rgb(238, 63, 197);;
+    }
+    ul li:nth-child(even){
+        color:rgb(200, 200, 11); ;
+    }
+    img{
+        height: 200px;
+        width: auto;
+        margin-right: 4%;
+    }
+
+</style>
+<body>
+    <div class="container">
+        <img src="https://cdn1.iconfinder.com/data/icons/productivity-aesthetics-vol-2/256/To_Do_List-512.png" alt="loading...">
+        <div class="head"><h1 style="color: rgb(238, 63, 197);">TO</h1><h1>DO</h1><h1 style="color: rgb(200, 200, 11);">LIST</h1></div>
+    <input id="i">
+    <button onclick="add()" style="background-color: blueviolet;color: aliceblue;">ADD</button>
+    <ul id="u" >
+        <li>start.....
+            <button onclick="DELETE(event)" style="background-color: darkred;color: white;">DELETE</button>
+        </li>
+    </ul>
+    </div>
+
+    <script>
+        var u=document.getElementById("u");
+        var i=document.getElementById("i");
+        function add(){
+            var list=document.createElement("li");
+            list.innerHTML=i.value+" <button onclick='DELETE(event)'>DELETE</button>"
+            u.append(list);
+            
+        }
+        function DELETE(event)
+        {
+            event.target.parentElement.remove()
+        }
+    </script>
+</body>
+</html>
